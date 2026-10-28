@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 226 30% 13%;
+    --card: 0 0% 100%;
+    --card-foreground: 226 30% 13%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 226 30% 13%;
+    --primary: 226 52% 26%;
+    --primary-foreground: 40 40% 99%;
+    --secondary: 226 24% 95%;
+    --secondary-foreground: 226 42% 21%;
+    --muted: 226 20% 96%;
+    --muted-foreground: 226 12% 43%;
+    --accent: 30 92% 52%;
+    --accent-foreground: 26 62% 13%;
+    --destructive: 0 68% 47%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 226 20% 89%;
+    --input: 226 20% 89%;
+    --ring: 226 52% 40%;
+    --chart-1: 226 52% 40%;
+    --chart-2: 30 92% 52%;
+    --chart-3: 174 52% 36%;
+    --chart-4: 262 45% 55%;
+    --chart-5: 12 70% 54%;
+    --radius: 0.75rem;
+    --font-heading: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+    --sidebar-background: 226 26% 98%;
+    --sidebar-foreground: 226 30% 22%;
+    --sidebar-primary: 226 52% 26%;
+    --sidebar-primary-foreground: 40 40% 99%;
+    --sidebar-accent: 226 28% 93%;
+    --sidebar-accent-foreground: 226 42% 20%;
+    --sidebar-border: 226 20% 90%;
+    --sidebar-ring: 226 52% 40%;
+  }
+
+  .dark {
+    --background: 226 28% 8%;
+    --foreground: 30 20% 96%;
+    --card: 226 26% 11%;
+    --card-foreground: 30 20% 96%;
+    --popover: 226 26% 11%;
+    --popover-foreground: 30 20% 96%;
+    --primary: 228 62% 66%;
+    --primary-foreground: 228 48% 12%;
+    --secondary: 226 20% 17%;
+    --secondary-foreground: 30 20% 94%;
+    --muted: 226 18% 16%;
+    --muted-foreground: 226 14% 66%;
+    --accent: 32 92% 58%;
+    --accent-foreground: 26 60% 12%;
+    --destructive: 0 62% 52%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 226 18% 20%;
+    --input: 226 18% 22%;
+    --ring: 32 92% 58%;
+    --chart-1: 228 62% 66%;
+    --chart-2: 32 92% 58%;
+    --chart-3: 174 52% 50%;
+    --chart-4: 262 55% 68%;
+    --chart-5: 12 74% 62%;
+    --sidebar-background: 226 30% 10%;
+    --sidebar-foreground: 30 18% 92%;
+    --sidebar-primary: 32 92% 58%;
+    --sidebar-primary-foreground: 26 60% 12%;
+    --sidebar-accent: 226 20% 16%;
+    --sidebar-accent-foreground: 30 18% 92%;
+    --sidebar-border: 226 18% 18%;
+    --sidebar-ring: 32 92% 58%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    @apply bg-accent/30;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .card-surface {
+    @apply rounded-xl border border-border bg-card text-card-foreground shadow-sm;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Respect the visitor's motion preference across the whole app. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

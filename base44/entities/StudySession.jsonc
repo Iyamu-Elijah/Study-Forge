@@ -1,0 +1,39 @@
+{
+  "name": "StudySession",
+  "type": "object",
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "course_id": {
+      "type": "string"
+    },
+    "session_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "started_at": {
+      "type": "string"
+    },
+    "duration_minutes": {
+      "type": "number"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "timer"
+      ],
+      "default": "timer"
+    }
+  },
+  "required": [
+    "session_date",
+    "duration_minutes"
+  ],
+  "rls": {
+    "read": {},
+    "create": {},
+    "update": {},
+    "delete": {}
+  }
+}

@@ -1,0 +1,21 @@
+# Netlify — optional alternative frontend host.
+#
+# The backend still lives on AWS (Cognito + the Amplify data API): this file only
+# configures how the single-page app is built and served.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Single-page application fallback. Every unknown path is served index.html with a 200,
+# so a deep link or a refresh on /dashboard, /courses/<id>, /assignments, /notes, /study,
+# /analytics or /settings resolves in the client-side router instead of 404-ing.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  # Set the public frontend variables here (or in the Netlify UI). Never put an AWS
+  # secret, access key or service credential in this file or in any VITE_ variable.
+  NODE_VERSION = "20"

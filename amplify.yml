@@ -1,0 +1,32 @@
+version: 1
+
+# Amplify Hosting build spec (Gen 2).
+#
+# The backend phase provisions Cognito, the AppSync data API and its DynamoDB tables in
+# your AWS account on every branch deploy; the frontend phase builds the single-page app.
+#
+# AWS_BRANCH and AWS_APP_ID are provided by Amplify Hosting. No AWS credentials appear
+# here: the build runs under the role Amplify creates for the app.
+
+backend:
+  phases:
+    build:
+      commands:
+        - npm ci
+        - npx ampx pipeline-deploy --branch $AWS_BRANCH --app-id $AWS_APP_ID
+
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - npm run build
+  artifacts:
+    baseDirectory: dist
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*

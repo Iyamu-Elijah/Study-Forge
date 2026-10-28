@@ -1,0 +1,51 @@
+{
+  "name": "UserPreferences",
+  "type": "object",
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "light",
+        "dark",
+        "system"
+      ],
+      "default": "system"
+    },
+    "focus_minutes": {
+      "type": "number",
+      "default": 25
+    },
+    "short_break_minutes": {
+      "type": "number",
+      "default": 5
+    },
+    "long_break_minutes": {
+      "type": "number",
+      "default": 15
+    },
+    "long_break_every": {
+      "type": "number",
+      "default": 4
+    },
+    "weekly_study_target_hours": {
+      "type": "number",
+      "default": 0
+    },
+    "timer_sound": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "profile_id"
+  ],
+  "rls": {
+    "read": {},
+    "create": {},
+    "update": {},
+    "delete": {}
+  }
+}

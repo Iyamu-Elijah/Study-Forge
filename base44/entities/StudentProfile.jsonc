@@ -1,0 +1,49 @@
+{
+  "name": "StudentProfile",
+  "type": "object",
+  "properties": {
+    "full_name": {
+      "type": "string"
+    },
+    "university": {
+      "type": "string"
+    },
+    "faculty": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string"
+    },
+    "academic_level": {
+      "type": "string"
+    },
+    "academic_session": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "string"
+    },
+    "semester_start": {
+      "type": "string",
+      "format": "date"
+    },
+    "semester_end": {
+      "type": "string",
+      "format": "date"
+    },
+    "onboarding_completed": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "full_name",
+    "university"
+  ],
+  "rls": {
+    "read": {},
+    "create": {},
+    "update": {},
+    "delete": {}
+  }
+}

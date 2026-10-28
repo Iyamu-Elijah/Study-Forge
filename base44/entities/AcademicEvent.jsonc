@@ -1,0 +1,61 @@
+{
+  "name": "AcademicEvent",
+  "type": "object",
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "course_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "lecture",
+        "test",
+        "examination",
+        "assignment",
+        "project",
+        "other"
+      ],
+      "default": "lecture"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_time": {
+      "type": "string"
+    },
+    "all_day": {
+      "type": "boolean",
+      "default": false
+    },
+    "location": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "title",
+    "start_date"
+  ],
+  "rls": {
+    "read": {},
+    "create": {},
+    "update": {},
+    "delete": {}
+  }
+}

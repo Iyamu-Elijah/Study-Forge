@@ -1,0 +1,51 @@
+{
+  "name": "Course",
+  "type": "object",
+  "properties": {
+    "profile_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "academic_session": {
+      "type": "string"
+    },
+    "semester": {
+      "type": "string"
+    },
+    "credit_units": {
+      "type": "number"
+    },
+    "instructor": {
+      "type": "string"
+    },
+    "timetable": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "archived"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "title",
+    "code"
+  ],
+  "rls": {
+    "read": {},
+    "create": {},
+    "update": {},
+    "delete": {}
+  }
+}
